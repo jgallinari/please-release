@@ -18,6 +18,8 @@ jobs:
         with:
           release-type: elixir
           package-name: please-release
+          skip-github-release: true
+          skip-labeling: true
           changelog-types: |
             [
               {"type":"build","section":"🧰 Other","hidden":true},
@@ -46,11 +48,11 @@ jobs:
 #      with:
 #        tag_name: v${{ needs.release-please.outputs.version }}
 #        github_token: ${{ github.token }}
-#    - name: Create dummy release
-#      uses: ncipollo/release-action@v1
-#      with:
-#        name: v${{ needs.release-please.outputs.version }}
-#        tag: v${{ needs.release-please.outputs.version }}
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          name: v${{ needs.release-please.outputs.version }}
+          tag: v${{ needs.release-please.outputs.version }}
       - name: Checkout repo
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
