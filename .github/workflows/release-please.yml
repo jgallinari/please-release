@@ -41,18 +41,23 @@ jobs:
 
     # This test ensures that a publication only occurs when a new release is created
 #    if: ${{ needs.release-please.outputs.release_created }}
-      - name: Delete tag and release
+      - name: Delete release
         if: ${{ steps.release.outputs.release_created }}
-        uses: dev-drprasad/delete-tag-and-release@v1.0
+        uses: cb80/delrel@latest
         with:
-          tag_name: v${{ needs.release-please.outputs.version }}
-          github_token: ${{ github.token }}
-      - name: Create release
-        if: ${{ steps.release.outputs.release_created }}
-        uses: ncipollo/release-action@v1
-        with:
-          name: v${{ needs.release-please.outputs.version }}
-          tag: v${{ needs.release-please.outputs.version }}
+          tag: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
+#      - name: Delete tag and release
+#        if: ${{ steps.release.outputs.release_created }}
+#        uses: dev-drprasad/delete-tag-and-release@v1.0
+#        with:
+#          tag_name: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
+#          github_token: ${{ github.token }}
+#      - name: Create release
+#        if: ${{ steps.release.outputs.release_created }}
+#        uses: ncipollo/release-action@v1
+#        with:
+#          name: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
+#          tag: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
       - name: Checkout repo
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
