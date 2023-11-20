@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/jgallinari/please-release/compare/v1.6.0...v1.7.0) (2023-11-20)
+
+
+### 🚀 Features
+
+* feature 5 (fid[#5](https://github.com/jgallinari/please-release/issues/5)) ([#14](https://github.com/jgallinari/please-release/issues/14)) ([2945020](https://github.com/jgallinari/please-release/commit/29450201684b7db51fda3bc2e99161e0de8b2a58))
+
 ## [1.6.0](https://github.com/jgallinari/please-release/compare/v1.5.0...v1.6.0) (2023-11-20)
 
 ### 🚀 Features
