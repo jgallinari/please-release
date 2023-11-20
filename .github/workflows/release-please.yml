@@ -20,9 +20,9 @@ jobs:
           package-name: please-release
           changelog-types: |
             [
-              {"type":"build","section":"🧰 Other","hidden":false},
+              {"type":"build","section":"🧰 Other","hidden":true},
               {"type":"change","section":"🚀 Features","hidden":false},
-              {"type":"chore","section":"🧰 Other","hidden":false},
+              {"type":"chore","section":"🧰 Other","hidden":true},
               {"type":"ci","section":"🧰 Other","hidden":true},
               {"type":"deprecate","section":"⚠️ Changes","hidden":false},
               {"type":"deps","section":"🧰 Other","hidden":true},
@@ -61,8 +61,8 @@ jobs:
           elixir-version: '1.15'
       - run: mix deps.get
         if: ${{ steps.release.outputs.release_created }}
-#      - run: mix changelog.update
-#        if: ${{ steps.release.outputs.release_created }}
+      - run: mix changelog.update
+        if: ${{ steps.release.outputs.release_created }}
       - run: mix changelog.api
         if: ${{ steps.release.outputs.release_created }}
       - uses: stefanzweifel/git-auto-commit-action@v5
