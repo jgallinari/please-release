@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/jgallinari/please-release/compare/v2.4.0...v2.4.1) (2023-11-20)
+
+
+### 🐞 Bug Fixes
+
+* update mix.exs (bid[#8](https://github.com/jgallinari/please-release/issues/8)) (pr[#21](https://github.com/jgallinari/please-release/issues/21)) ([011a7e3](https://github.com/jgallinari/please-release/commit/011a7e362cec8067de7e585397f7dbd773dfbe71))
+
 ## [2.4.0](https://github.com/jgallinari/please-release/compare/v1.8.0...v2.4.0) (2023-11-20)
 
 ### 📚 Documentation
