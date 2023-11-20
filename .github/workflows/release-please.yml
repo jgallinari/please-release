@@ -18,8 +18,6 @@ jobs:
         with:
           release-type: elixir
           package-name: please-release
-          skip-github-release: true
-          skip-labeling: true
           changelog-types: |
             [
               {"type":"build","section":"🧰 Other","hidden":true},
@@ -43,11 +41,11 @@ jobs:
 
     # This test ensures that a publication only occurs when a new release is created
 #    if: ${{ needs.release-please.outputs.release_created }}
-#    - name: Delete tag and release
-#      uses: dev-drprasad/delete-tag-and-release@v1.0
-#      with:
-#        tag_name: v${{ needs.release-please.outputs.version }}
-#        github_token: ${{ github.token }}
+      - name: Delete tag and release
+        uses: dev-drprasad/delete-tag-and-release@v1.0
+        with:
+          tag_name: v${{ needs.release-please.outputs.version }}
+          github_token: ${{ github.token }}
       - name: Create release
         if: ${{ steps.release.outputs.release_created }}
         uses: ncipollo/release-action@v1
