@@ -2,10 +2,9 @@
 
 ## [2.4.0](https://github.com/jgallinari/please-release/compare/v1.8.0...v2.4.0) (2023-11-20)
 
-
 ### 📚 Documentation
 
-* doc 8 (fid[#8](https://github.com/jgallinari/please-release/issues/8)) (pr[#19](https://github.com/jgallinari/please-release/issues/19)) ([7374d50](https://github.com/jgallinari/please-release/commit/7374d50c9c341db878eee74ae24310d34ea97f5d))
+* doc 8 ([fid#8](https://airnity.fibery.io/Work/Feature/8)) ([pr#19](https://github.com/jgallinari/please-release/issues/19)) ([7374d50](https://github.com/jgallinari/please-release/commit/7374d50c9c341db878eee74ae24310d34ea97f5d))
 
 ## [1.8.0](https://github.com/jgallinari/please-release/compare/v1.7.0...v1.8.0) (2023-11-20)
 
