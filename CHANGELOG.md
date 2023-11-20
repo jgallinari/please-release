@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/jgallinari/please-release/compare/v1.1.0...v1.1.1) (2023-11-20)
+
+
+### 🧰 Other
+
+* release v1.1.0 ([9146cf0](https://github.com/jgallinari/please-release/commit/9146cf0c709a555c6e0b6578597478897a64318b))
+
 ## [1.1.0](https://github.com/jgallinari/please-release/compare/v1.0.0...v1.1.0) (2023-11-20)
 
 ### 🧰 Other
