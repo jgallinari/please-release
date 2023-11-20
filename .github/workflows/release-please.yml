@@ -49,6 +49,7 @@ jobs:
 #        tag_name: v${{ needs.release-please.outputs.version }}
 #        github_token: ${{ github.token }}
       - name: Create release
+        if: ${{ steps.release.outputs.release_created }}
         uses: ncipollo/release-action@v1
         with:
           name: v${{ needs.release-please.outputs.version }}
