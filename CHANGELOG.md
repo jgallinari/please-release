@@ -2,13 +2,11 @@
 
 ## [2.7.0](https://github.com/jgallinari/please_release/compare/v2.6.0...v2.7.0) (2023-11-21)
 
-
 ### 🚀 Features
 
 * update git hooks env ([#27](https://github.com/jgallinari/please_release/issues/27)) ([4431b91](https://github.com/jgallinari/please_release/commit/4431b91dab5368fa55075ae3a818d0efa8ddc4cf))
 
 ## [2.6.0](https://github.com/jgallinari/please_release/compare/v2.5.0...v2.6.0) (2023-11-21)
-
 
 ### 🚀 Features
 
