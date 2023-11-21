@@ -2,7 +2,6 @@
 
 ## [2.5.0](https://github.com/jgallinari/please_release/compare/v2.4.1...v2.5.0) (2023-11-21)
 
-
 ### 🚀 Features
 
 * add deps ([#23](https://github.com/jgallinari/please_release/issues/23)) ([8c309f5](https://github.com/jgallinari/please_release/commit/8c309f58f55e4a6fc01721463bf05d78802d971f))
