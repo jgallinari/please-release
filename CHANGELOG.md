@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/jgallinari/please_release/compare/v2.5.0...v2.6.0) (2023-11-21)
+
+
+### 🚀 Features
+
+* add config ([#25](https://github.com/jgallinari/please_release/issues/25)) ([47d3a1d](https://github.com/jgallinari/please_release/commit/47d3a1d2421bf426c8432cdccaa645bc4b816785))
+
 ## [2.5.0](https://github.com/jgallinari/please_release/compare/v2.4.1...v2.5.0) (2023-11-21)
 
 ### 🚀 Features
