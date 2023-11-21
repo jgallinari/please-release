@@ -21,8 +21,12 @@ defmodule PleaseRelease.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:credo, "~> 1.6", only: [:test, :dev], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:test, :dev], runtime: false},
       {:earmark, "~> 1.4"},
-      {:earmark_reversal, "~> 0.1"}
+      {:earmark_reversal, "~> 0.1"},
+      {:git_hooks, "~> 0.5", only: [:test, :dev], runtime: false},
+      {:mix_test_watch, "~> 1.0", only: [:test, :dev], runtime: false}
     ]
   end
 end
