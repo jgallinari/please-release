@@ -49,6 +49,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [release-please]
     steps:
+      - uses: 8BitJonny/gh-get-current-pr@2.2.0
+        id: PR
+      - run: echo "Your PR number is ${{ steps.PR.outputs.number }} and its JSON is ${{ steps.PR.outputs.pr }}"
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
