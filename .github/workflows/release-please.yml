@@ -61,8 +61,10 @@ jobs:
 #          echo "${{ env.FOO }}"
       - name: Check if branch exists
         id: check
+#          if git ls-remote --exit-code origin release-please--branches--main--components--please-release; then
         run: |
-          if git ls-remote --exit-code origin release-please--branches--main--components--please-release; then
+          brs=$(git branch -r --list origin/release-please--branches--main--components--please-release | wc -l)
+          if ((brs > 0))
             echo "pr_exists=true" >> "$GITHUB_OUTPUT"
           fi
 
