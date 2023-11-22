@@ -62,9 +62,17 @@ jobs:
       - name: Check if branch exists
         id: check
 #          if git ls-remote --exit-code origin release-please--branches--main--components--please-release; then
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          brs=$(git branch -r --list origin/release-please--branches--main--components--please-release | wc -l)
-          if ((brs > 0))
+          prs=$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
+            --json baseRefName,headRefName \
+            --jq '
+              map(select(.baseRefName == "main" and .headRefName == "release-please--branches--main--components--please-release"))
+              | length
+          ')
+          if ((prs > 0))
             echo "pr_exists=true" >> "$GITHUB_OUTPUT"
           fi
 
