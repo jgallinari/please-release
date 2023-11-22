@@ -45,13 +45,32 @@ jobs:
             ]
           extra-files: README.md
 
+  check-release-please-pr:
+    runs-on: ubuntu-latest
+    outputs:
+      pr_exists: ${{ steps.check.outputs.pr_exists }}
+    steps:
+#      - name: Set the value
+#        id: step_one
+#        run: |
+#          echo "FOO=$(git status)" >> $GITHUB_ENV
+#      - name: Use the value
+#        id: step_two
+#        run: |
+#          echo "${{ env.FOO }}"
+      - name: Check if branch exists
+        id: check
+        run: |
+          if git ls-remote --heads origin refs/heads/release-please--branches--main--components--please-release | wc -l)
+          then
+            echo "pr_exists=true" >> "$GITHUB_OUTPUT"
+          fi
+
   update-changelog:
     runs-on: ubuntu-latest
-    needs: [release-please]
+    needs: [check-release-please-pr]
+    if: ${{ needs.check-release-please-pr.outputs.pr_exists }}
     steps:
-      - uses: 8BitJonny/gh-get-current-pr@2.2.0
-        id: PR
-      - run: echo "Your PR number is ${{ steps.PR.outputs.number }} and its JSON is ${{ steps.PR.outputs.pr }}"
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
