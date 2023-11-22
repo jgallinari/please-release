@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.8.0](https://github.com/jgallinari/please_release/compare/v2.7.0...v2.8.0) (2023-11-22)
+
+### 🚀 Features
+
+* feature 10 ([fid#10](https://airnity.fibery.io/Work/Feature/10)) ([#29](https://github.com/jgallinari/please_release/issues/29)) ([ed7d2b6](https://github.com/jgallinari/please_release/commit/ed7d2b6361a9115a19411cd9818bb08fddeb76f3))
+
 ## [2.7.0](https://github.com/jgallinari/please_release/compare/v2.6.0...v2.7.0) (2023-11-21)
 
 ### 🚀 Features
