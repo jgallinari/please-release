@@ -48,27 +48,35 @@ jobs:
   update-changelog:
     runs-on: ubuntu-latest
     needs: [release-please]
-    # Ensure that this job only occurs when a new release is created
-    if: ${{ needs.release-please.outputs.release_created }}
     steps:
-      - name: Delete release (but keep the tag)
-        uses: cb80/delrel@latest
-        with:
-          tag: v${{ needs.release-please.outputs.version }}
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Setup Beam
-        uses: erlef/setup-beam@v1
-        with:
-          otp-version: '25'
-          elixir-version: '1.15'
-      - run: mix deps.get
-      - run: mix changelog.update
-      - run: mix changelog.api
-      - name: Commit and push changes if any
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: release v${{ needs.release-please.outputs.version }}"
+      - uses: nelonoel/branch-name@v1
+      # Use branch name for whatever purpose
+      - run: echo ${BRANCH_NAME}
+    
+#  update-changelog:
+#    runs-on: ubuntu-latest
+#    needs: [release-please]
+#    # Ensure that this job only occurs when a new release is created
+#    if: ${{ needs.release-please.outputs.release_created }}
+#    steps:
+#      - name: Delete release (but keep the tag)
+#        uses: cb80/delrel@latest
+#        with:
+#          tag: v${{ needs.release-please.outputs.version }}
+#      - name: Checkout repo
+#        uses: actions/checkout@v4
+#      - name: Setup Beam
+#        uses: erlef/setup-beam@v1
+#        with:
+#          otp-version: '25'
+#          elixir-version: '1.15'
+#      - run: mix deps.get
+#      - run: mix changelog.update
+#      - run: mix changelog.api
+#      - name: Commit and push changes if any
+#        uses: stefanzweifel/git-auto-commit-action@v5
+#        with:
+#          commit_message: "chore: release v${{ needs.release-please.outputs.version }}"
 
 #      - name: Delete release
 #        if: ${{ steps.release.outputs.release_created }}
