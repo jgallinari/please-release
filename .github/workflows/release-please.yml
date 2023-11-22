@@ -51,9 +51,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/}
-
+      - run: echo version = v${{ needs.release-please.outputs.version }}"
+# release-please--branches--main--components--please-release
 #  update-changelog:
 #    runs-on: ubuntu-latest
 #    needs: [release-please]
