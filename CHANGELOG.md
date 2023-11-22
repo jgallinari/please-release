@@ -2,10 +2,9 @@
 
 ## [2.9.1](https://github.com/jgallinari/please_release/compare/v2.9.0...v2.9.1) (2023-11-22)
 
-
 ### 📚 Internal Documentation
 
-* test int-docs (fid[#12](https://github.com/jgallinari/please_release/issues/12)) (pr[#33](https://github.com/jgallinari/please_release/issues/33)) ([baccbcc](https://github.com/jgallinari/please_release/commit/baccbcc069a7fd2737561c2533917ab5e831c5a0))
+* test int-docs ([fid#12](https://airnity.fibery.io/Work/Feature/12)) ([pr#33](https://github.com/jgallinari/please_release/issues/33)) ([baccbcc](https://github.com/jgallinari/please_release/commit/baccbcc069a7fd2737561c2533917ab5e831c5a0))
 
 ## [2.9.0](https://github.com/jgallinari/please_release/compare/v2.8.0...v2.9.0) (2023-11-22)
 
