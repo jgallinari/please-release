@@ -35,6 +35,7 @@ jobs:
               {"type":"docs","section":"📚 Documentation","hidden":false},
               {"type":"feat","section":"🚀 Features","hidden":false},
               {"type":"fix","section":"🐞 Bug Fixes","hidden":false},
+              {"type":"int-docs","section":"📚 Internal Documentation","hidden":false},
               {"type":"perf","section":"✨ Polish","hidden":false},
               {"type":"refactor","section":"✨ Polish","hidden":false},
               {"type":"remove","section":"⚠️ Changes","hidden":false},
