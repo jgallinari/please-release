@@ -62,7 +62,7 @@ jobs:
       - name: Check if branch exists
         id: check
         run: |
-          if git ls-remote --heads origin refs/heads/release-please--branches--main--components--please-release | wc -l
+          if git ls-remote origin release-please--branches--main--components--please-release | wc -l
           then
             echo "pr_exists=true" >> "$GITHUB_OUTPUT"
           fi
