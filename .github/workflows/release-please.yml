@@ -51,17 +51,8 @@ jobs:
     outputs:
       pr_exists: ${{ steps.check.outputs.pr_exists }}
     steps:
-#      - name: Set the value
-#        id: step_one
-#        run: |
-#          echo "FOO=$(git status)" >> $GITHUB_ENV
-#      - name: Use the value
-#        id: step_two
-#        run: |
-#          echo "${{ env.FOO }}"
-      - name: Check if branch exists
+      - name: Check if release PR exists
         id: check
-#          if git ls-remote --exit-code origin release-please--branches--main--components--please-release; then
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
@@ -79,6 +70,7 @@ jobs:
   update-changelog:
     runs-on: ubuntu-latest
     needs: [check-release-please-pr]
+    # Ensure that this job only occurs when a PR release is open
     if: ${{ needs.check-release-please-pr.outputs.pr_exists }}
     steps:
       - name: Checkout repo
@@ -99,7 +91,17 @@ jobs:
           commit_message: "chore: release v${{ needs.release-please.outputs.version }}"
           branch: release-please--branches--main--components--please-release
 
-# release-please--branches--main--components--please-release
+  delete-release:
+    runs-on: ubuntu-latest
+    needs: [release-please]
+    # Ensure that this job only occurs when a new release is created
+    if: ${{ needs.release-please.outputs.release_created }}
+    steps:
+      - name: Delete release (but keep the tag)
+        uses: cb80/delrel@latest
+        with:
+          tag: v${{ needs.release-please.outputs.version }}
+
 #  update-changelog:
 #    runs-on: ubuntu-latest
 #    needs: [release-please]
