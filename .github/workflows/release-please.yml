@@ -24,7 +24,6 @@ jobs:
         with:
           release-type: elixir
           package-name: please-release
-          release-as: v2.9.3
           changelog-types: |
             [
               {"type":"build","section":"🧰 Other","hidden":true},
