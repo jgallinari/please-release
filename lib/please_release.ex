@@ -55,7 +55,7 @@ defmodule PleaseRelease do
     {[], :reject}
   end
 
-  @date_regex ~r/ (\(\d{4}-\d{2}-\d{2}\))/
+  @date_regex ~r/.* (\(\d{4}-\d{2}-\d{2}\))/
   @opening_parens_regex ~r/(.*)\($/
   defp process_changelog_api_item(item, :keep) when is_binary(item) do
     new_item =
