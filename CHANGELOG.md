@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.5](https://github.com/jgallinari/please_release/compare/v2.9.4...v2.9.5) (2023-11-23)
+
+
+### 🐞 Bug Fixes
+
+* version leftover (bid[#17](https://github.com/jgallinari/please_release/issues/17)) ([#42](https://github.com/jgallinari/please_release/issues/42)) ([019bdb0](https://github.com/jgallinari/please_release/commit/019bdb0c91a070175be81a2b14702cc2686b77fd))
+
 ## [2.9.4](https://github.com/jgallinari/please_release/compare/v2.9.3...v2.9.4) (2023-11-23)
 
 ### 🐞 Bug Fixes
