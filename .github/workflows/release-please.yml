@@ -24,6 +24,7 @@ jobs:
         with:
           release-type: elixir
           package-name: please-release
+          release-as: v2.9.3
           changelog-types: |
             [
               {"type":"build","section":"🧰 Other","hidden":true},
@@ -94,7 +95,9 @@ jobs:
 
   delete-release:
     runs-on: ubuntu-latest
-    needs: [release-please]
+    needs: [check-release-please-pr]
+    # Ensure that this job only occurs when there is no PR release
+    if: ${{ ! needs.check-release-please-pr.outputs.pr_open }}
     steps:
       - name: Clean leftover releases (but keep tags)
         env:
