@@ -11,7 +11,7 @@ by adding `please_release` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:please_release, "~> 2.9.2"}
+    {:please_release, "~> 2.9.3"}
   ]
 end
 ```

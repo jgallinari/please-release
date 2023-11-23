@@ -4,7 +4,7 @@ defmodule PleaseRelease.MixProject do
   def project do
     [
       app: :please_release,
-      version: "2.9.2",
+      version: "2.9.3",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps()
