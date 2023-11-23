@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.4](https://github.com/jgallinari/please_release/compare/v2.9.3...v2.9.4) (2023-11-23)
+
+
+### 🐞 Bug Fixes
+
+* inject legacy changelog (bid[#16](https://github.com/jgallinari/please_release/issues/16)) ([#40](https://github.com/jgallinari/please_release/issues/40)) ([234edfb](https://github.com/jgallinari/please_release/commit/234edfb6307bbcb95b575894ed8810ec7ad52f1d))
+
 ## [2.9.3](https://github.com/jgallinari/please_release/compare/v2.9.2...v2.9.3) (2023-11-23)
 
 ### 🐞 Bug Fixes
