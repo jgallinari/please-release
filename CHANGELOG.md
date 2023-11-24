@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.0](https://github.com/jgallinari/please_release/compare/v2.9.5...v2.10.0) (2023-11-24)
+
+
+### 🚀 Features
+
+* test workflow ([#47](https://github.com/jgallinari/please_release/issues/47)) ([90b2e03](https://github.com/jgallinari/please_release/commit/90b2e03ba4bf5c62bb2bb9ca7808d0e98140cb02))
+
 ## [2.9.5](https://github.com/jgallinari/please_release/compare/v2.9.4...v2.9.5) (2023-11-23)
 
 ### 🐞 Bug Fixes
