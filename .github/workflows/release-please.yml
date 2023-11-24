@@ -1,9 +1,13 @@
 name: Release Please
 
 on:
-  push:
-    branches:
-      - main
+  # Allow this workflow to be called from other workflows
+  workflow_call:
+    # Map the workflow outputs to job outputs
+    outputs:
+      release_created:
+        description: "release_created = true when the release PR has been merged"
+        value: ${{ jobs.release-please.outputs.release_created }}
 
 permissions:
   contents: write
