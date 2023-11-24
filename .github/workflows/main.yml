@@ -1,0 +1,19 @@
+name: Main workflow
+
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  release-please:
+    uses: ./.github/workflows/release-please.yml  # use the callable release-please job to run release-please
+
+  stuff:
+    name: Run stuff
+    runs-on: ubuntu-latest
+    # Require release-please to pass before stuff runs
+    needs: [release-please]
+    # Ensure that this job only occurs when a release PR has been merged
+#    if: ${{ needs.release-please.outputs.release_created }}
+    steps:
+      - run: echo ${{ needs.release-please.outputs.release_created }}
