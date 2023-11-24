@@ -56,6 +56,7 @@ jobs:
     outputs:
       pr_open: ${{ steps.check.outputs.pr_open }}
     steps:
+      - run: echo "release_created=${{ needs.release-please.outputs.release_created }}"
       - name: Check if release PR exists
         id: check
         env:
