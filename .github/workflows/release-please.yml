@@ -56,6 +56,7 @@ jobs:
     outputs:
       pr_open: ${{ steps.check.outputs.pr_open }}
     steps:
+      - run: echo "release_created=${{ needs.release-please.outputs.release_created }}"
       - name: Check if release PR exists
         id: check
         env:
@@ -71,6 +72,7 @@ jobs:
           if ((prs > 0)); then
             echo "pr_open=true" >> "$GITHUB_OUTPUT"
           fi
+      - run: echo "pr_open=${{ steps.check.outputs.pr_open }}"
 
   update-changelog:
     runs-on: ubuntu-latest
