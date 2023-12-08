@@ -25,6 +25,6 @@ jobs:
     # Require release-please to pass before stuff runs
     needs: [release-please]
     # Ensure that this job only occurs when a release PR has been merged
-    if: ${{ needs.release-please.outputs.release_created || inputs.deploy_flg }}
+    if: ${{ needs.release-please.outputs.releases_created || inputs.deploy_flg }}
     steps:
-      - run: echo ${{ needs.release-please.outputs.release_created }}
+      - run: echo ${{ needs.release-please.outputs.releases_created }}
