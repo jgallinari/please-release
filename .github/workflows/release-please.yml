@@ -5,9 +5,9 @@ on:
   workflow_call:
     # Map the workflow outputs to job outputs
     outputs:
-      release_created:
-        description: "release_created = true when the release PR has been merged"
-        value: ${{ jobs.release-please.outputs.release_created }}
+      releases_created:
+        description: "releases_created = true when the release PR has been merged"
+        value: ${{ jobs.release-please.outputs.releases_created }}
 
 permissions:
   contents: write
@@ -20,7 +20,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
+      releases_created: ${{ steps.release.outputs.releases_created }}
       version: "${{steps.release.outputs.major}}.${{steps.release.outputs.minor}}.${{steps.release.outputs.patch}}"
     steps:
       - uses: google-github-actions/release-please-action@v3
@@ -56,7 +56,7 @@ jobs:
     outputs:
       pr_open: ${{ steps.check.outputs.pr_open }}
     steps:
-      - run: echo "release_created=${{ needs.release-please.outputs.release_created }}"
+      - run: echo "releases_created=${{ needs.release-please.outputs.releases_created }}"
       - name: Check if release PR exists
         id: check
         env:
@@ -117,7 +117,7 @@ jobs:
 #    runs-on: ubuntu-latest
 #    needs: [release-please]
 #    # Ensure that this job only occurs when a new release is created
-#    if: ${{ needs.release-please.outputs.release_created }}
+#    if: ${{ needs.release-please.outputs.releases_created }}
 #    steps:
 #      - name: Delete release (but keep the tag)
 #        uses: cb80/delrel@latest
@@ -139,37 +139,37 @@ jobs:
 #          commit_message: "chore: release v${{ needs.release-please.outputs.version }}"
 
 #      - name: Delete release
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #        uses: cb80/delrel@latest
 #        with:
 #          tag: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
 #      - name: Delete tag and release
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #        uses: dev-drprasad/delete-tag-and-release@v1.0
 #        with:
 #          tag_name: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
 #          github_token: ${{ github.token }}
 #      - name: Create release
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #        uses: ncipollo/release-action@v1
 #        with:
 #          name: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
 #          tag: v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
 #      - name: Checkout repo
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #        uses: actions/checkout@v4
 #      - uses: erlef/setup-beam@v1
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #        with:
 #          otp-version: '25'
 #          elixir-version: '1.15'
 #      - run: mix deps.get
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #      - run: mix changelog.update
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #      - run: mix changelog.api
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #      - uses: stefanzweifel/git-auto-commit-action@v5
-#        if: ${{ steps.release.outputs.release_created }}
+#        if: ${{ steps.release.outputs.releases_created }}
 #        with:
 #          commit_message: "chore: release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
