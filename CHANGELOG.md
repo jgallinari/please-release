@@ -1,7 +1,16 @@
 # Changelog
 
-## [2.10.0](https://github.com/jgallinari/please_release/compare/v2.9.5...v2.10.0) (2023-11-24)
+## [2.11.0](https://github.com/jgallinari/please_release/compare/v2.10.0...v2.11.0) (2023-12-08)
 
+### 🚀 Features
+
+* **toto:** prepare demo ([fid#2023](https://airnity.fibery.io/Work/Feature/2023)) ([pr#49](https://github.com/jgallinari/please_release/issues/49)) ([f4301c7](https://github.com/jgallinari/please_release/commit/f4301c705954123f70048b2a4843ca69461e1951))
+
+### 📚 Documentation
+
+* **toto:** a doc ([fid#2023](https://airnity.fibery.io/Work/Feature/2023)) ([f4301c7](https://github.com/jgallinari/please_release/commit/f4301c705954123f70048b2a4843ca69461e1951))
+
+## [2.10.0](https://github.com/jgallinari/please_release/compare/v2.9.5...v2.10.0) (2023-11-24)
 
 ### 🚀 Features
 
