@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.12.0](https://github.com/jgallinari/please_release/compare/v2.11.0...v2.12.0) (2023-12-08)
+
+
+### 🚀 Features
+
+* **demo:** prepare demo (fid[#2024](https://github.com/jgallinari/please_release/issues/2024)) (pr[#51](https://github.com/jgallinari/please_release/issues/51)) ([a17a813](https://github.com/jgallinari/please_release/commit/a17a813dda9b85e9220bbc9b2242b4fee5892eec))
+
+
+### 📚 Documentation
+
+* **docs scope:** a 2024 doc (fid[#2024](https://github.com/jgallinari/please_release/issues/2024)) ([a17a813](https://github.com/jgallinari/please_release/commit/a17a813dda9b85e9220bbc9b2242b4fee5892eec))
+
 ## [2.11.0](https://github.com/jgallinari/please_release/compare/v2.10.0...v2.11.0) (2023-12-08)
 
 ### 🚀 Features
