@@ -1,5 +1,9 @@
 # Changelog
 
+## (2023-12-13)
+
+* **sms:** a 2026 doc
+
 ## (2023-12-11)
 
 * **docs scope demo:** a 2025 doc
